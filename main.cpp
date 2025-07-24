@@ -712,6 +712,10 @@ void bank::atm_system() {
                     cout << "\n Invalid amount.";
                 } else if (amount > balance) {
                     cout << "\n Insufficient balance.";
+                } else if (amount > 5000) { // Withdrawal limit for every flow
+                    cout << "\n You can only withdraw in five-thousands or less."
+                } else if (amount % 100 !== 0) { // Must withdraw in hundreds or thousands only
+                    cout << "\n Please enter in only hundreds or thousands."
                 } else {
                     balance -= amount;
                     cout << "\n Withdrawal successful.";
